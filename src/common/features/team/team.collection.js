@@ -1,8 +1,8 @@
 'use strict';
 
-import {TeamMemberModel} from './teamMember.model';
+import {TeamModel} from './team.model';
 
-export class TeamMemberCollection {
+export class TeamCollection {
     constructor(collectionName) {
         this.collectionName = collectionName;
         this.models = [];
@@ -10,11 +10,11 @@ export class TeamMemberCollection {
 
     /**
      * Add member
-     * @param {TeamMemberModel} member
-     * @returns {TeamMemberCollection}
+     * @param {TeamModel} member
+     * @returns {TeamCollection}
      */
     addMember(member) {
-        if (member instanceof TeamMemberModel) {
+        if (member instanceof TeamModel) {
             this.models.push(member);
         }
         

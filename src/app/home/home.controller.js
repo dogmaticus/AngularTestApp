@@ -8,6 +8,7 @@
     constructor($scope) {
         this.$scope = $scope;
         $scope.teams = [];
+        $scope.teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         var team = new TeamMemberCollection('DataArt1');
         var teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         team.addMember(teamMember);
