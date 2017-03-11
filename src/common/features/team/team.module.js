@@ -7,7 +7,7 @@ import {TeamCollection} from './team.collection';
 // services
 import {TeamService} from './team.service';
 
-angular.module('app.common.features.team-member', [
+angular.module('app.common.features.team', [
     ])
     .factory('TeamModel', TeamModel)
     .factory('TeamCollection', TeamCollection)
