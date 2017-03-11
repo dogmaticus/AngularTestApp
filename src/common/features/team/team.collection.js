@@ -13,11 +13,11 @@ export class TeamCollection {
      * @param {TeamModel} member
      * @returns {TeamCollection}
      */
-    addMember(member) {
-        if (member instanceof TeamModel) {
-            this.models.push(member);
+    addTeam(team) {
+        if (team instanceof TeamModel) {
+            this.models.push(team);
         }
-        
+
         return this;
     }
 }
