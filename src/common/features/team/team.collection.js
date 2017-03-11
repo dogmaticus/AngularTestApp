@@ -5,7 +5,7 @@ import {TeamModel} from './team.model';
 export class TeamCollection {
     constructor(collectionName) {
         this.collectionName = collectionName;
-        this.models = [];
+        this.members = [];
     }
 
     /**
