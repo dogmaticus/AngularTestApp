@@ -1,6 +1,6 @@
 'use strict';
 
-export class TeamMemberModel {
+export class TeamModel {
     /**
      * Constructor
      * @param {String} name
@@ -13,7 +13,7 @@ export class TeamMemberModel {
     /**
      * Add skill
      * @param {String} skill
-     * @returns {TeamMemberModel}
+     * @returns {TeamModel}
     */
     addSkill(skill) {
         if (this._skills.indexOf(skill) === -1) {
@@ -26,7 +26,7 @@ export class TeamMemberModel {
     /**
      * Add skills
      * @param {Array.<String>} skills
-     * @returns {TeamMemberModel}
+     * @returns {TeamModel}
     */
     addSkills(skills) {
         skills.forEach(function (skill) {
