@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/">
+    
+    <title>Awesome App</title>
+</head>
+
+<body ng-cloak>
+
+    <awesome-header awesome-header-title="Awesome App"
+                    awesome-header-home-state="teams">
+    </awesome-header>
+
+    <div ui-view class="container"></div>
+
+    <awesome-footer>
+        <li><a href="//angular.codeschool.com" target="_blank">AngularJS CodeSchool</a></li>
+    </awesome-footer>
+
+</body>
+</html>
