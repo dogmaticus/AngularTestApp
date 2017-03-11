@@ -2,13 +2,17 @@
  
  import {TeamMemberModel} from '../../common/features/team-member/teamMember.model';
  import {TeamMemberCollection} from '../../common/features/team-member/teamMember.collection';
+ //import {TeamModel} from '../../common/features/team/team.model';
+ //import {TeamCollection} from '../../common/features/team/team.collection';
  
  class HomeController {
 
     constructor($scope) {
         this.$scope = $scope;
-        $scope.teams = [];
         $scope.teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
+
+        $scope.teams =[];
+        
         var team = new TeamMemberCollection('DataArt1');
         var teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         team.addMember(teamMember);
@@ -17,6 +21,8 @@
 
         team = new TeamMemberCollection('Webpacj');
         teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
+        team.addMember(teamMember);
+        teamMember = new TeamMemberModel('John2').addSkills(['JavaScript2', 'Angular222JS']);
         team.addMember(teamMember);
 
         $scope.teams.push(team);
