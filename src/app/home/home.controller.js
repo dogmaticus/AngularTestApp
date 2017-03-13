@@ -2,8 +2,6 @@
  
  import {TeamMemberModel} from '../../common/features/team-member/teamMember.model';
  import {TeamMemberCollection} from '../../common/features/team-member/teamMember.collection';
- //import {TeamModel} from '../../common/features/team/team.model';
- //import {TeamCollection} from '../../common/features/team/team.collection';
  
  class HomeController {
 

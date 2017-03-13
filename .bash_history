@@ -16,3 +16,7 @@ git remote remove origin
 git remote add origin https://github.com/dogmaticus/AngularTestApp.git
 git push -u origin master
 npm run dev
+ls
+npm -v
+npm install
+npm -v
