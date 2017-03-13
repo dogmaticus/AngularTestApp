@@ -13,6 +13,6 @@ import {routeConfig} from './home.routes.config';
 import './home.styles.scss';
 
 export default angular
-  .module('app.home', [])
+  .module('app.home', ['ui.bootstrap'])
   .controller('HomeController', HomeController)
   .config(routeConfig);
