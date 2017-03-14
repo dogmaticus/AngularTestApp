@@ -17,9 +17,11 @@
 
         var team = new TeamMemberCollection('DataArt1');
         team.isSelected = true;
+        
         var teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         team.addMember(teamMember);
         $scope.teams.push(team);
+        
 
         team = new TeamMemberCollection('Webpacj');
         teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
@@ -37,10 +39,12 @@
             var newTeam = new TeamMemberCollection(teamName);
             $scope.teams.push(newTeam);
         }
-        //$scope.selectedTeam = $scope.teams[0];
-        $scope.selectedTeam = function() {
-            $scope.teams.map(value => { if (value.isSelected == true) return value });
-        }
+        $scope.selectedTeam = $scope.teams[0];
+        //$scope.selectedTeam = function() {
+        //    $scope.teams.forEach(function(item, index, array) {
+        //        if (item.isSelected) return item;
+        //    })();
+        //}
     }
 }
 
