@@ -5,19 +5,32 @@ import {TeamMemberModel} from './teamMember.model';
 export class TeamMemberCollection {
     constructor(collectionName) {
         this.collectionName = collectionName;
-        this.models = [];
+        this.isSelected = false;
+        this.members = [];
     }
 
     /**
-     * Add member
+     * Add member from team
      * @param {TeamMemberModel} member
      * @returns {TeamMemberCollection}
      */
     addMember(member) {
         if (member instanceof TeamMemberModel) {
-            this.models.push(member);
+            this.members.push(member);
         }
         
+        return this;
+    }
+
+    /**
+     * Delete member from team
+     * @param {TeamMemberModel} member
+     * @returns {TeamMemberCollection}
+     */
+    deleteMember(team) {
+        if (team instanceof TeamMemberModel) {
+            this.members.remove(team);
+        }
         return this;
     }
 }
