@@ -7,7 +7,6 @@
         </div>
 
         <div class="col-md-5 col-xs-12">
-
             <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a href="#">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
@@ -23,7 +22,7 @@
                 </span>
             </div>
             <div class="panel-group" id="TeamsAccordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default" ng-repeat="(key, team) in teams">
+                <!--<div class="panel panel-default" ng-repeat="(key, team) in teams">
                     <div class="panel-heading" role="tab" id="#teamId_{{key}}">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#TeamsAccordion" href="" data-target="#teamId_{{key}}" aria-expanded="false" aria-controls="collapseOne">
@@ -36,50 +35,57 @@
                             <h5>{{teamMember.name}}</h5>
                         </div>
                     </div>
-                </div>
+                </div>-->
+                <uib-accordion close-others="oneAtATime">
+                    <div uib-accordion-group class="panel-default" heading="{{team.collectionName}}" ng-repeat="(key, team) in teams">
+                        <div class="list-group" ng-repeat="teamMember in team.models">
+                            <div>
+                                {{teamMember.name}} <button class="btn btn-danger">Delete</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </uib-accordion>
             </div>
         </div>
 
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h4>Here will be teamMember table</h4>
-        </div>
-        <div class="col-md-6">
-            <uib-accordion close-others="oneAtATime">
-                <div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                    This content is straight in the template.
-                </div>
-                <div uib-accordion-group class="panel-default" heading="{{group.title}}" ng-repeat="group in groups">
-                    {{group.content}}
-                </div>
+        <!--<uib-accordion close-others="oneAtATime">
+            <div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                This content is straight in the template.
+            </div>
+            <div uib-accordion-group class="panel-default" heading="{{group.title}}" ng-repeat="group in groups">
+                {{group.content}}
+            </div>
                 <div uib-accordion-group class="panel-default" heading="Dynamic Body Content">
-                    <p>The body of the uib-accordion group grows to fit the contents</p>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-                    <div ng-repeat="item in items">{{item}}</div>
-                </div>
+                <p>The body of the uib-accordion group grows to fit the contents</p>
+                <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                <div ng-repeat="item in items">{{item}}</div>
+            </div>
                 <div uib-accordion-group class="panel-default" heading="Custom template">
-                    Hello
-                </div>
+                Hello
+            </div>
                 <div uib-accordion-group class="panel-default" is-open="status.isCustomHeaderOpen" >
-                    <uib-accordion-heading>
-                        Custom template with custom header template <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isCustomHeaderOpen, 'glyphicon-chevron-right': !status.isCustomHeaderOpen}"></i>
-                    </uib-accordion-heading>
-                    World
-                </div>
-                <div uib-accordion-group class="panel-danger" heading="Delete account">
-                    <p>Please, to delete your account, click the button below</p>
-                    <button class="btn btn-danger">Delete</button>
+                <uib-accordion-heading>
+                    Custom template with custom header template <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isCustomHeaderOpen, 'glyphicon-chevron-right': !status.isCustomHeaderOpen}"></i>
+                </uib-accordion-heading>
+                World
+            </div>
+                <div uib-accordion-group class="panel-default" heading="{{team.collectionName}}" ng-repeat="(key, team) in teams">
+                    <div class="list-group" ng-repeat="teamMember in team.models">
+                        <p>{{teamMember.name}} <button class="btn btn-danger">Delete</button></p>
+
+                    </div>
                 </div>
                 <div uib-accordion-group class="panel-default" is-open="status.open">
-                    <uib-accordion-heading>
-                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                    </uib-accordion-heading>
-                    This is just some content to illustrate fancy headings.
-                </div>
-            </uib-accordion>
-        </div>
+                <uib-accordion-heading>
+                    I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </uib-accordion-heading>
+                This is just some content to illustrate fancy headings.
+            </div>
+        </uib-accordion>-->
+
     </div>
+    
 
 
 

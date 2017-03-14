@@ -9,6 +9,14 @@
         this.$scope = $scope;
         $scope.teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
 
+        //accordion default settings
+        $scope.oneAtATime = true;
+        $scope.status = {
+                 isFirstOpen: true,
+                 isFirstDisabled: false
+             };
+        //
+
         $scope.teams =[];
 
         var team = new TeamMemberCollection('DataArt1');
@@ -30,8 +38,12 @@
         team.addMember(teamMember);
 
         $scope.teams.push(team);
+        
 
-        //$scope.oneAtATime = true;
+        $scope.addItem = function() {
+            var newItemNo = $scope.items.length + 1;
+            $scope.items.push('Item ' + newItemNo);
+        };
 
         // $scope.groups = [
         //     {
@@ -46,10 +58,10 @@
         //
         // $scope.items = ['Item 1', 'Item 2', 'Item 3'];
         //
-        // $scope.addItem = function() {
-        //     var newItemNo = $scope.items.length + 1;
-        //     $scope.items.push('Item ' + newItemNo);
-        // };
+         //$scope.addItem = function() {
+         //    var newItemNo = $scope.items.length + 1;
+         //    $scope.items.push('Item ' + newItemNo);
+         //};
         //
         // $scope.status = {
         //     isFirstOpen: true,
