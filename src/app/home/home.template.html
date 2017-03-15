@@ -2,14 +2,12 @@
     <div class="row">
 
         <div class="col-xs-12">
-            <h1>Hello Awesome App {{ 'v%VERSION%' | versionInterpolate }}!</h1>
-            <p>My skills are {{teamMember.getSkills().join(', ')}}</p>
+            <h1>Company teams App {{ 'v%VERSION%' | versionInterpolate }}!</h1>
         </div>
 
         <div class="col-md-5 col-xs-12">
-
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation" class="active" ><a href="#" >{{selectedTeam}}</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
             </ul>
 
@@ -17,28 +15,33 @@
 
         <div class="col-md-6 col-md-offset-1 col-xs-12">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" ng-model="newTeamName" placeholder="New team name...">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
+                    <button class="btn btn-default" type="button" ng-click="addTeam(newTeamName)">Add</button>
                 </span>
             </div>
             <div class="panel-group" id="TeamsAccordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default" ng-repeat="(key, team) in teams">
-                    <div class="panel-heading" role="tab" id="#teamId_{{key}}">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#TeamsAccordion" href="" data-target="#teamId_{{key}}" aria-expanded="false" aria-controls="collapseOne">
-                                {{team.collectionName}}
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="#teamId_{{key}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="list-group" ng-repeat="teamMember in team.models">
-                            <h5>{{teamMember.name}}</h5>
+                <uib-accordion close-others="oneAtATime">
+                    <div uib-accordion-group
+                         ng-repeat="(key, team) in teams"
+                         is-open="team.isTeamSelected"
+                         class="panel-default"
+                         heading="{{team.collectionName}} - {{team.isTeamSelected}}">
+                        <div class="list-group" ng-Controller="AccordionController">
+                            <div id="{{key}}" ng-repeat="teamMember in team.members" >
+                                {{teamMember.name}} <button class="btn btn-danger" >Delete</button>
+                                <p>SelectedTeam: {{selectedTeam}}</p>
+                                <p>IsTeamSelected: {{team.isTeamSelected}}</p>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </uib-accordion>
             </div>
         </div>
-
     </div>
+    
+
+
+
 </div>
