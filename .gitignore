@@ -9,3 +9,5 @@ build/*
 dist/*
 vendor/*
 npm-debug.log
+AppData
+.bash_history

@@ -16,3 +16,14 @@ git remote remove origin
 git remote add origin https://github.com/dogmaticus/AngularTestApp.git
 git push -u origin master
 npm run dev
+npm run dev
+git add .
+git commit -m "teamFeature"
+git push -u origin master
+git push origin master
+git add .
+git commit -m "teamFeature2"
+git push origin master
+npm run dev
+git pull origin master 
+git status
