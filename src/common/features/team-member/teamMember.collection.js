@@ -6,7 +6,6 @@ export class TeamMemberCollection {
     constructor(collectionName) {
         this.collectionName = collectionName;
         this.isTeamSelected = false;
-        this.isLoaded = 'noooo';
         this.members = [];
     }
 

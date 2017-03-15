@@ -7,7 +7,7 @@
 
         <div class="col-md-5 col-xs-12">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">{{selectedTeam.collectionName}}</a></li>
+                <li role="presentation" class="active"><a href="#" >{{selectedTeam.collectionName}}</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
             </ul>
 
@@ -30,8 +30,8 @@
                         <div class="list-group" ng-Controller="AccordionController">
                             <div id="{{key}}" ng-repeat="teamMember in team.members" >
                                 {{teamMember.name}} <button class="btn btn-danger" >Delete</button>
-                                <p>IsLoaded: {{isLoaded}}</p>
-                                <p>IsLoaded: {{team.isSelected}}</p>
+                                <p>SelectedTeam: {{selectedTeam}}</p>
+                                <p>IsTeamSelected: {{team.isTeamSelected}}</p>
                             </div>
 
                         </div>

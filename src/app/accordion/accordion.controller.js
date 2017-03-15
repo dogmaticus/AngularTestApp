@@ -7,7 +7,6 @@ class AccordionController {
 		$scope.$watch('team.isTeamSelected', function (newvalue, oldvalue, scope) {
 			debugger;
 			if (newvalue) {
-				$scope.isLoaded = newvalue;
 				$scope.selectedTeam = scope.team;
 		    }
 		    

@@ -5,18 +5,17 @@
 
  class HomeController {
 
-     constructor($scope, AccordionController) {
+     constructor($scope) {
         this.$scope = $scope;
 
         //accordion default settings
         $scope.newTeamName = '';
         $scope.oneAtATime = true;
+        $scope.selectedTeam = '';
         //
-        $scope.isLoaded = "Nooooo";
         $scope.teams = [];
 
         var team = new TeamMemberCollection('DataArt1');
-        
         var teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         team.addMember(teamMember);
         $scope.teams.push(team);
