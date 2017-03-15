@@ -5,7 +5,8 @@ import {TeamMemberModel} from './teamMember.model';
 export class TeamMemberCollection {
     constructor(collectionName) {
         this.collectionName = collectionName;
-        this.isSelected = false;
+        this.isTeamSelected = false;
+        this.isLoaded = 'noooo';
         this.members = [];
     }
 

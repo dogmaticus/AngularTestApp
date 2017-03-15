@@ -22,10 +22,16 @@
             </div>
             <div class="panel-group" id="TeamsAccordion" role="tablist" aria-multiselectable="true">
                 <uib-accordion close-others="oneAtATime">
-                    <div uib-accordion-group is-open="team.isSelected" class="panel-default" heading="{{team.collectionName}}" ng-repeat="(key, team) in teams" >
-                        <div class="list-group" ng-repeat="teamMember in team.members">
-                            <div id="{{key}}">
-                                {{teamMember.name}} <button class="btn btn-danger">Delete</button>
+                    <div uib-accordion-group
+                         ng-repeat="(key, team) in teams"
+                         is-open="team.isTeamSelected"
+                         class="panel-default"
+                         heading="{{team.collectionName}} - {{team.isTeamSelected}}">
+                        <div class="list-group" ng-Controller="AccordionController">
+                            <div id="{{key}}" ng-repeat="teamMember in team.members" >
+                                {{teamMember.name}} <button class="btn btn-danger" >Delete</button>
+                                <p>IsLoaded: {{isLoaded}}</p>
+                                <p>IsLoaded: {{team.isSelected}}</p>
                             </div>
 
                         </div>

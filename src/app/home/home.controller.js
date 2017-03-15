@@ -5,18 +5,17 @@
 
  class HomeController {
 
-    constructor($scope) {
+     constructor($scope, AccordionController) {
         this.$scope = $scope;
 
         //accordion default settings
         $scope.newTeamName = '';
         $scope.oneAtATime = true;
         //
-
+        $scope.isLoaded = "Nooooo";
         $scope.teams = [];
 
         var team = new TeamMemberCollection('DataArt1');
-        team.isSelected = true;
         
         var teamMember = new TeamMemberModel('John').addSkills(['JavaScript', 'AngularJS']);
         team.addMember(teamMember);
@@ -39,15 +38,9 @@
             var newTeam = new TeamMemberCollection(teamName);
             $scope.teams.push(newTeam);
         }
-        $scope.selectedTeam = $scope.teams[0];
-        //$scope.selectedTeam = function() {
-        //    $scope.teams.forEach(function(item, index, array) {
-        //        if (item.isSelected) return item;
-        //    })();
-        //}
     }
 }
 
-HomeController.$inject = ['$scope'];
+ HomeController.$inject = ['$scope'];
 
 export default HomeController;
